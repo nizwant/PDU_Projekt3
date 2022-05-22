@@ -1,0 +1,16 @@
+getwd()
+Bikes1 <- read.csv("JC-202001-citibike-tripdata.csv")
+Bikes2 <- read.csv("JC-202002-citibike-tripdata.csv")
+Bikes3 <- read.csv("JC-202003-citibike-tripdata.csv")
+Bikes4 <- read.csv("JC-202004-citibike-tripdata.csv")
+Bikes5 <- read.csv("JC-202005-citibike-tripdata.csv")
+Bikes6 <- read.csv("JC-202006-citibike-tripdata.csv")
+Bikes7 <- read.csv("JC-202007-citibike-tripdata.csv")
+Bikes8 <- read.csv("JC-202008-citibike-tripdata.csv")
+
+all_bikes <- rbind(Bikes1,Bikes2,Bikes3,Bikes4,Bikes5,Bikes6,Bikes7,Bikes8)
+Accidents <- read.csv("NYC_Accidents_2020.csv")
+head(Accidents)
+Accidents_bikes <- Accidents[Accidents$NUMBER.OF.CYCLIST.INJURED!=0|Accidents$NUMBER.OF.CYCLIST.KILLED!=0,]
+dim(Accidents_bikes)
+dim(all_bikes)
